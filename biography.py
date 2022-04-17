@@ -5,7 +5,8 @@ class Biography:
         sections = biography.split('\n')
         self.name = sections[0].strip()
         self.category = sections[1].lower().strip()
-        self.bio = self.process_bio(' '.join(sections[2:]))
+        self.bio = ' '.join(sections[2:])
+        self.words = set(self.process_bio(self.bio))
     
     @staticmethod
     def stop_words() -> list[str]:
@@ -20,7 +21,7 @@ class Biography:
         return [s for s in cleaned_bio.split(' ') if (len(s) > 2 and s not in Biography.stop_words())]
 
     def display(self) -> None:
-        print(f'name: {self.name}\ncategory: {self.category}\nbio: {self.bio}')
+        print(f'name: {self.name}\ncategory: {self.category}\nbio: {self.words}')
 
 if __name__ == "__main__":
     s = '''Willa Cather
