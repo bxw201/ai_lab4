@@ -1,4 +1,3 @@
-import math
 from biography import Biography
 from training import Training
 
@@ -64,8 +63,3 @@ class Testing:
                 correct += 1
         print(f'Overall accuracy: {correct} out of {self.size} = {correct/self.size:.2f}')
 
-if __name__ == "__main__":
-    training = Training('tinyCorpus.txt', 5)
-    training.train()
-    testing = Testing('tinyCorpus.txt', 5, training)
-    testing.print_results()

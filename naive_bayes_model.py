@@ -1,3 +1,4 @@
+import sys
 from biography import Biography
 from training import Training
 from testing import Testing
@@ -22,6 +23,10 @@ class Naive_Bayes_Model:
             testing.print_results()
 
 if __name__ == '__main__':
-    nb = Naive_Bayes_Model("bioCorpus.txt", 14)
+    if len(sys.argv) != 3:
+        print("Incorrect number of input arguments. Try again.")
+        sys.exit(1)
+    nb = Naive_Bayes_Model(sys.argv[1], int(sys.argv[2]))
     nb.train()
     nb.run_inference()
+    

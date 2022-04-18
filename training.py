@@ -46,7 +46,3 @@ class Training:
         for biography in self.training_set:
             biography.display()
         print(self.words)
-
-if __name__ == "__main__":
-    T = Training("bioCorpus.txt", 5)
-    T.display()
