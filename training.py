@@ -2,9 +2,8 @@ import math
 from biography import Biography
 
 class Training:
-    def __init__(self, file_name: str, N: int) -> None:
-        with open(file_name, 'r') as file:
-            self.training_set = [Biography(s.strip()) for s in file.read().split('\n\n') if s.strip() != ''][:N]
+    def __init__(self, training_set: list[Biography]) -> None:
+        self.training_set = training_set
 
         words = []
         categories = []
@@ -15,7 +14,7 @@ class Training:
         self.categories = set(categories)
 
         self.epsilon = 0.1
-        self.size = N
+        self.size = len(self.training_set)
 
     def train(self) -> None:
         # initialize

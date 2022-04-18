@@ -3,10 +3,8 @@ from biography import Biography
 from training import Training
 
 class Testing:
-    def __init__(self, file_name: str, N: int, training: Training, testing_set: list[Biography] = []) -> None:
-        with open(file_name, 'r') as file:
-            self.testing_set = [Biography(s.strip()) for s in file.read().split('\n\n') if s.strip() != ''][N:]
-        # self.testing_set = testing_set
+    def __init__(self, testing_set: list[Biography], training: Training) -> None:
+        self.testing_set = testing_set
         self.size = len(self.testing_set)
         self.training = training
     
