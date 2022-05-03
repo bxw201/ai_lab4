@@ -11,3 +11,5 @@ This program uses the Naive Bayes method to learn a classifier for text from tra
 First, be sure that Python is installed in the environment where the program is being run. To check, run `python --version` in your CLI.
 
 To run the program, enter `python naive_bayes_model.py [corpus_file_name] [N]` where `corpus_file_name` is the name of the file storing the corpus of biographies and `N` is the size of the training set.
+
+Two example corpuses can be found already in `bioCorpus.txt` and `tinyCorpus.txt`.
